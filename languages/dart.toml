@@ -1,0 +1,33 @@
+name = "dart"
+entrypoint = "main.dart"
+extensions = [
+  "dart"
+]
+packages = [
+  "dart=2.5.1-1"
+]
+aptKeys = [
+  "6494C6D6997C215E"
+]
+aptRepos = [
+  "deb [arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main"
+]
+
+[languageServer]
+command = [
+  "dart",
+  "/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot",
+  "--lsp",
+]
+
+[run]
+command = [
+  "/usr/lib/dart/bin/dart",
+  "./main.dart"
+]
+
+[tests]
+
+  [tests.hello]
+  code = "void main() { print('Hello, World!'); }"
+  output = "Hello, World!\n"

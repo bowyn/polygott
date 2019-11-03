@@ -1,0 +1,24 @@
+name = "forth"
+entrypoint = "main.fs"
+extensions = [
+  "fs"
+]
+packages = [
+  "gforth"
+]
+setup = [ ]
+
+[run]
+command = [
+  "gforth",
+  "--",
+  "./main.fs",
+  "-e",
+  "bye"
+]
+
+[tests]
+
+  [tests.hello]
+  code = ".\" hello\" CR"
+  output = "hello\n"
